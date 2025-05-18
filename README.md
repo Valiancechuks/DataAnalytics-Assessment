@@ -105,7 +105,7 @@ Explained that duplicate names are expected due to real-world data behavior — 
 
 Challenge	and Solution
 
-Missing or null customer names -	Combined first_name and last_name, defaulted to 'Unknown'
+Missing or null customer names -	Combined first_name and last_name, defaulted to 'Unknown' for missing/blank rows
 
 Inconsistent date logic	- Used PERIOD_DIFF and DATEDIFF for accurate time calculations
 
