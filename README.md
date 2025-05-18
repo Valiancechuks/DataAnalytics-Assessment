@@ -25,6 +25,7 @@ Constructed customer names using first_name + last_name, defaulting to 'Unknown'
 The final output is sorted by total deposits in descending order.
 
 
+
 **Question 2: Transaction Frequency Analysis**
 
 Objective:
@@ -50,6 +51,7 @@ Low Frequency: ≤ 2/month
 Aggregated the number of customers in each category and calculated their average frequency.
 
 
+
 **Question 3: Account Inactivity Alert**
 
 Objective:
@@ -68,6 +70,7 @@ Calculated inactivity using DATEDIFF(CURRENT_DATE, last_transaction_date).
 Returned plans with inactivity > 365 days, along with:
 
 Plan ID, Owner ID, Plan Type, Last Transaction Date, Inactivity Duration
+
 
 
 **Question 4: Customer Lifetime Value (CLV) Estimation**
@@ -92,6 +95,7 @@ Used customer ID and constructed full name.
 Explained that duplicate names are expected due to real-world data behavior — customers are identified by unique IDs.
 
 
+
 **Challenges Encountered**
 
 Challenge	and Solution
@@ -99,6 +103,7 @@ Missing or null customer names -	Combined first_name and last_name, defaulted to
 Inconsistent date logic	- Used PERIOD_DIFF and DATEDIFF for accurate time calculations
 Amounts stored in kobo - Converted all money fields by dividing by 100 to get naira
 Duplicate customer names -	Handled by grouping and identifying by id, not name
+
 
 
 **Data Observations**
@@ -120,6 +125,7 @@ No uniqueness constraints on phone numbers
 All queries treat each ID as a unique customer, per business rule.
 
 
+
 **Assumptions**
 
 Each row in savings_savingsaccount represents a single deposit transaction.
@@ -137,14 +143,17 @@ Withdrawals were not included in any calculations.
 Customer identity is defined solely by the id column.
 
 
+
 **Technologies Used**
 
 SQL Engine: MySQL 8.0
+
 
 **IDE:** MySQL Workbench
 
 **Functions Used:**
 PERIOD_DIFF, DATEDIFF, COALESCE, NULLIF, TRIM, CONCAT, CASE, ROUND
+
 
 
 **Data Dictionary**
