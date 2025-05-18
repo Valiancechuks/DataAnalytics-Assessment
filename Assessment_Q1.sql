@@ -23,7 +23,7 @@ total_deposits AS (
 SELECT 
     u.id AS owner_id,
     -- Handle both NULL and empty strings in name field
-    COALESCE(NULLIF(TRIM(CONCAT(u.first_name, ' ', u.last_name)), ''),
+    COALESCE(NULLIF(TRIM(CONCAT(u.first_name, ' ', u.last_name)), ''), 'Unknown') AS name,
     sp.savings_count,
     ip.investment_count,
     td.total_deposits
