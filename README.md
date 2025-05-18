@@ -50,6 +50,7 @@ Aggregated the number of customers in each category and calculated their average
 
 
 **Question 3: Account Inactivity Alert**
+
 Objective:
 Identify savings or investment plans with no deposit transactions in the last 365 days.
 
