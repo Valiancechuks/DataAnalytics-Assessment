@@ -9,6 +9,7 @@ Each question is answered in a separate `.sql` file. Queries are written to be a
 **Question-by-Question Breakdown**
 
 **Question 1: High-Value Customers with Multiple Products**
+
 Objective:
 Identify customers with both a funded savings plan and investment plan, and rank them by total deposits.
 
