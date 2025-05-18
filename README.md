@@ -206,6 +206,53 @@ plan_id	- CHAR type,	Foreign key referencing plans_plan.id
 created_on -	DATETIME type,	Timestamp when the transaction was made
 
 
+**Added Insights and Recommendations**
+
+While working through the questions, I found some ways the data and queries could be improved to help the business get even more value. These recommendations are based on practical insights from analyzing customer behavior, data structure, and usage patterns.
+
+Q1: High-Value Customers with Multiple Products
+
+Show only active plans: Some plans might have been created but never funded. It would be helpful to add a column to show if a plan actually received money.
+
+Include investment value: Only deposits into savings accounts are counted now. If investment plans involve money too, adding that would give a more complete picture of the customer.
+
+Simplify query logic: Combining savings and investment plan counts into one step could make the query easier to manage.
+
+Q2: Transaction Frequency Analysis
+
+Avoid inflated averages: Customers who have just started using the platform might look more active than they are. It helps to ignore very new users or adjust for how long they've been active.
+
+Make categories flexible: Right now, “High”, “Medium”, and “Low” frequencies are fixed. Putting these ranges in a settings table could make it easier to change them in the future.
+
+Look at trends: Tracking transactions over time (like monthly patterns) can show whether users are becoming more or less active.
+
+Q3: Account Inactivity Alert
+
+Catch accounts that were never used: Some accounts may have been created but never received any deposits. These should be included as inactive too.
+
+Add plan creation date: Knowing when the account was opened helps tell whether inactivity is really a problem or just too early to expect usage.
+
+Summarize by user: Instead of just showing inactive plans, it could help to show users who have multiple inactive plans or no recent activity at all.
+
+Q4: Customer Lifetime Value (CLV) Estimation
+
+Use real profit numbers if available: The current estimate assumes the business makes 0.1% on every transaction. If actual rates differ by product, using them would make the CLV more accurate.
+
+Include investment returns: If customers earn or invest money through other products, that should be part of the CLV too.
+
+Break down the CLV formula: Showing parts like average transaction value or monthly profit helps others understand how the CLV was calculated.
+
+Adjust for recent activity: A customer who hasn’t used their account in a long time may not be as valuable going forward. Factoring in recent activity makes the estimate more useful.
+
+General Suggestions
+
+Use naira instead of kobo: All money values are stored in kobo, which requires dividing by 100 in every query. Storing or displaying values in naira would make things easier.
+
+Clean up user data: Some name fields are blank or have extra spaces. Making sure names are clean and complete helps with reports and personalization.
+
+Reuse common calculations: Fields like account age or total deposits are used in many places. It could help to create reusable views or columns for these values.
+
+
 **Notes**
 
 All queries have been carefully formatted, commented, and written for clarity and correctness.
@@ -213,3 +260,5 @@ All queries have been carefully formatted, commented, and written for clarity an
 Business rules were interpreted from schema patterns and field flags.
 
 Results are grouped and filtered based on data integrity, using ID fields as the single source of identity truth.
+
+Added insights and recommendations for richer analysis and deeper customer understanding.
