@@ -1,6 +1,8 @@
 # Data Analytics SQL Assessment
 
-This repository contains my SQL solutions for a four-part data analytics assessment. The tasks focus on customer behavior insights, transaction activity analysis, account monitoring, and lifetime value estimation — all done using MySQL.
+This repository contains my SQL solutions for a four-part data analytics assessment. The tasks focus on customer behavior insights, transaction activity analysis, account monitoring, and lifetime value estimation — all done using MySQL. This repository contains solutions to the SQL proficiency assessment evaluating data retrieval, aggregation, joins, and business problem-solving with SQL.
+
+Each question is answered in a separate `.sql` file. Queries are written to be accurate, efficient, and well-structured for readability.
 
 ---
 
@@ -21,6 +23,8 @@ Customers with at least one investment plan (is_a_fund = 1)
 I used savings_savingsaccount to compute the total confirmed deposits, converting from kobo to naira by dividing by 100.
 
 Constructed customer names using first_name + last_name, defaulting to 'Unknown' if missing or blank.
+
+Performed join operations
 
 The final output is sorted by total deposits in descending order.
 
