@@ -161,27 +161,41 @@ PERIOD_DIFF, DATEDIFF, COALESCE, NULLIF, TRIM, CONCAT, CASE, ROUND
 **users_customuser**
 
 Column Name,	Type and	Description
+
 id - CHAR type,	Unique identifier for each customer
+
 first_name - 	VARCHAR type,	Customer’s first name
+
 last_name	VARCHAR type,	Customer’s last name
+
 date_joined	DATETIME type,	Date and time the customer joined
 
 **plans_plan**
 
 Column Name,	Type and	Description
+
 id - 	CHAR type, Unique identifier for each plan
+
 owner_id -	CHAR type,	Foreign key referencing users_customuser.id
+
 is_regular_savings -	TINYINT type,	Indicates a regular savings plan (1 = yes, 0 = no)
+
 is_a_fund	- TINYINT type,	Indicates an investment fund plan (1 = yes, 0 = no)
 
 **Savings_savingsaccount**
 
 Column Name,	Type, and	Description
+
 id -	INT type,	Unique identifier for each transaction
+
 owner_id -	CHAR type,	Foreign key referencing users_customuser.id
+
 confirmed_amount -	DOUBLE type,	Amount in kobo (divide by 100 to convert to naira)
+
 plan_id	- CHAR type,	Foreign key referencing plans_plan.id
+
 created_on -	DATETIME type,	Timestamp when the transaction was made
+
 
 **Notes**
 
