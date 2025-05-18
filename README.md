@@ -1,6 +1,6 @@
 # Data Analytics SQL Assessment
 
-This repository contains my SQL solutions for a four-part data analytics assessment. The tasks focus on customer behavior insights, transaction activity analysis, account monitoring, and lifetime value estimation — all done using MySQL. This repository contains solutions to the SQL proficiency assessment evaluating data retrieval, aggregation, joins, and business problem-solving with SQL.
+This repository contains my SQL solutions to the SQL proficiency assessment evaluating data retrieval, aggregation, joins, and business problem-solving with SQL. The tasks focus on customer behavior insights, transaction activity analysis, account monitoring, and lifetime value estimation — all done using MySQL. 
 
 Each question is answered in a separate `.sql` file. Queries are written to be accurate, efficient, and well-structured for readability.
 
