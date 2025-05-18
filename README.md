@@ -104,9 +104,13 @@ Explained that duplicate names are expected due to real-world data behavior — 
 **Challenges Encountered**
 
 Challenge	and Solution
+
 Missing or null customer names -	Combined first_name and last_name, defaulted to 'Unknown'
+
 Inconsistent date logic	- Used PERIOD_DIFF and DATEDIFF for accurate time calculations
+
 Amounts stored in kobo - Converted all money fields by dividing by 100 to get naira
+
 Duplicate customer names -	Handled by grouping and identifying by id, not name
 
 
