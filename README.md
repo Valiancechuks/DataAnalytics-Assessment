@@ -5,6 +5,7 @@ This repository contains my SQL solutions for a four-part data analytics assessm
 ---
 
 **Question-by-Question Breakdown**
+
 **Question 1: High-Value Customers with Multiple Products**
 Objective:
 Identify customers with both a funded savings plan and investment plan, and rank them by total deposits.
