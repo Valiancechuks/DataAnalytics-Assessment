@@ -26,6 +26,7 @@ The final output is sorted by total deposits in descending order.
 
 
 **Question 2: Transaction Frequency Analysis**
+
 Objective:
 Categorize customers based on how often they transact each month.
 
@@ -70,6 +71,7 @@ Plan ID, Owner ID, Plan Type, Last Transaction Date, Inactivity Duration
 
 
 **Question 4: Customer Lifetime Value (CLV) Estimation**
+
 Objective:
 Estimate each customer's lifetime value using tenure and transaction volume.
 
@@ -91,6 +93,7 @@ Explained that duplicate names are expected due to real-world data behavior — 
 
 
 **Challenges Encountered**
+
 Challenge	and Solution
 Missing or null customer names -	Combined first_name and last_name, defaulted to 'Unknown'
 Inconsistent date logic	- Used PERIOD_DIFF and DATEDIFF for accurate time calculations
@@ -99,6 +102,7 @@ Duplicate customer names -	Handled by grouping and identifying by id, not name
 
 
 **Data Observations**
+
 Some customers appear multiple times in users_customuser with:
 
 Same full name
@@ -117,6 +121,7 @@ All queries treat each ID as a unique customer, per business rule.
 
 
 **Assumptions**
+
 Each row in savings_savingsaccount represents a single deposit transaction.
 
 confirmed_amount is stored in kobo (smallest unit).
@@ -133,6 +138,7 @@ Customer identity is defined solely by the id column.
 
 
 **Technologies Used**
+
 SQL Engine: MySQL 8.0
 
 **IDE:** MySQL Workbench
@@ -142,7 +148,9 @@ PERIOD_DIFF, DATEDIFF, COALESCE, NULLIF, TRIM, CONCAT, CASE, ROUND
 
 
 **Data Dictionary**
+
 **users_customuser**
+
 Column Name,	Type and	Description
 id - CHAR type,	Unique identifier for each customer
 first_name - 	VARCHAR type,	Customer’s first name
@@ -150,6 +158,7 @@ last_name	VARCHAR type,	Customer’s last name
 date_joined	DATETIME type,	Date and time the customer joined
 
 **plans_plan**
+
 Column Name,	Type and	Description
 id - 	CHAR type, Unique identifier for each plan
 owner_id -	CHAR type,	Foreign key referencing users_customuser.id
@@ -157,6 +166,7 @@ is_regular_savings -	TINYINT type,	Indicates a regular savings plan (1 = yes, 0 
 is_a_fund	- TINYINT type,	Indicates an investment fund plan (1 = yes, 0 = no)
 
 **Savings_savingsaccount**
+
 Column Name,	Type, and	Description
 id -	INT type,	Unique identifier for each transaction
 owner_id -	CHAR type,	Foreign key referencing users_customuser.id
@@ -165,9 +175,9 @@ plan_id	- CHAR type,	Foreign key referencing plans_plan.id
 created_on -	DATETIME type,	Timestamp when the transaction was made
 
 **Notes**
+
 All queries have been carefully formatted, commented, and written for clarity and correctness.
 
 Business rules were interpreted from schema patterns and field flags.
 
 Results are grouped and filtered based on data integrity, using ID fields as the single source of identity truth.
-
